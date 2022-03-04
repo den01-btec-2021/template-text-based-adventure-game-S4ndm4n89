@@ -1,6 +1,4 @@
 
-print("Welcome")
-
 def main():
     print("Welcome to the Game")
 
