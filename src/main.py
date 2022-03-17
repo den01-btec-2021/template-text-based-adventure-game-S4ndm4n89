@@ -23,6 +23,7 @@ def main():
                         print("correct")
                         # We need to collect Something here - i.e add to Backpack
                         backpack.append("key 1 collected")
+                        print("Key 1 collected")
                 else:
                         print("Incorrect")
                         lives -= 1
