@@ -1,5 +1,6 @@
 
 def main():
+        
     print("Welcome to the Game")
 
     PlayerName=input("what is your name? ")
@@ -14,38 +15,60 @@ def main():
     print("Upon looking around this central room again you find a backpack and put it on,\n you also notice door like shape in the corner of the room, it has four key like hole init.   ")  
 
     while True:
-        direction = input("Which room do you want to try? please choice from Red, Blue, Green or Black. ")    
+        Colour = input("Which room do you want to try? please choice from Red, Blue, Green or Black. ")    
 
-        if direction == "Red":
-                print("you entered the Red Room. ")
-                puzzle_guess_Red = input("What is 2 + 2? ")
-                if puzzle_guess_Red == "4":
-                        print("correct")
-                        # We need to collect Something here - i.e add to Backpack
-                        backpack.append("key 1 collected")
-                        print("Key 1 collected")
-                else:
-                        print("Incorrect")
-                        lives -= 1
-                        print(f"You have {lives} lives remaining.")
-        elif direction == "Blue":
-                print("you entered the Blue Room. ")
+        if Colour == "Red":
+                room_colour = "Red"
+                puzzle = " what is 2 + 2?"
+                Puzzle_solution = "4"
+                key_number = "1"
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+               
+        elif Colour == "Blue":
+                room_colour = "Blue"
+                puzzle = " what is the value of this binary 10100 ?"
+                Puzzle_solution = "20"
+                key_number = "2"
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
 
-        elif direction == "Green":
-                print("you entered the Green Room. ")
+        elif Colour == "Green":
+                room_colour = "Green"
+                puzzle = " what is 2*8  ?"
+                Puzzle_solution = "16"
+                key_number = "3"
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+
         
-        elif direction == "Black": 
-                print("you entered the Black Room. ")
+        elif Colour == "Black": 
+                room_colour = "Black"
+                puzzle = " what is the value of this binary 1100100 ?"
+                Puzzle_solution = "100"
+                key_number = "4"
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+
         else:
-                print("Room not recognised!")   
+                print("Room colour not recognised!")   
 
         #if back pack is full, open door and win game.
         if ("Key 1" in backpack) and ("Key 2" in backpack) and ("Key 3" in backpack) and ("key 4" in backpack):
                 print(" you input the four keys into the strange door in the corner, it open and you see the outside, you run for freedom\n you escape! game over!!  ") 
 
 
+        if lives == 0:
+                print(" Your dead!\n please restart")
+        exit()
 
+def in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number):
+        print(f"you have entered the {room_colour} room. ")
+        puzzle_guess = input(puzzle)
+        if puzzle_guess == puzzle_solution:
+                print("Correct, {Key_number} collected.") 
+                backpack.append(f"Key {key_number}")
+        else:
+                lives -= 1
+                print(f"incorrect, you have {lives} lives remaining.")
 
+        return lives  
 
-
-main()
+if __name__ == "__main__":
+        main()
