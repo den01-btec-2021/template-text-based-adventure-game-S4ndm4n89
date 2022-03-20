@@ -20,31 +20,31 @@ def main():
         if Colour == "Red":
                 room_colour = "Red"
                 puzzle = " what is 2 + 2?"
-                Puzzle_solution = "4"
+                puzzle_solution = "4"
                 key_number = "1"
-                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,key_number)
                
         elif Colour == "Blue":
                 room_colour = "Blue"
                 puzzle = " what is the value of this binary 10100 ?"
-                Puzzle_solution = "20"
+                puzzle_solution = "20"
                 key_number = "2"
-                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,key_number)
 
         elif Colour == "Green":
                 room_colour = "Green"
                 puzzle = " what is 2*8  ?"
-                Puzzle_solution = "16"
+                puzzle_solution = "16"
                 key_number = "3"
-                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,key_number)
 
         
         elif Colour == "Black": 
                 room_colour = "Black"
                 puzzle = " what is the value of this binary 1100100 ?"
-                Puzzle_solution = "100"
+                puzzle_solution = "100"
                 key_number = "4"
-                lives = in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number)
+                lives = in_room(backpack,lives, room_colour, puzzle, puzzle_solution, key_number)
 
         else:
                 print("Room colour not recognised!")   
@@ -58,7 +58,7 @@ def main():
                 print(" Your dead!\n please restart")
         exit()
 
-def in_room(backpack,lives,room_colour,puzzle,puzzle_solution,Key_number):
+def in_room(backpack,lives,room_colour,puzzle,puzzle_solution,key_number):
         print(f"you have entered the {room_colour} room. ")
         puzzle_guess = input(puzzle)
         if puzzle_guess == puzzle_solution:
